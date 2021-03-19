@@ -1,0 +1,74 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="SiteMaster.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="source/obs.css" />
+    <script src="source/action.js"></script>
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+                .logoutborder {
+    border: 2px blue dashed;
+}
+
+.logoutbutton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    cursor: pointer;
+    margin-right: 0px;
+    display: block;
+    margin-left: auto;
+}
+    </style>
+</head>
+<body>
+    <form id="form2" runat="server">
+       <ul>
+         <asp:Menu ID="Menu1" runat="server">
+               <Items>
+                   <asp:MenuItem NavigateUrl="~/AnaSayfa.master" Text="Ana Sayfa" Value="Ana Sayfa" Selected="True"></asp:MenuItem>
+                   <asp:MenuItem Target="dersler" Text="Dersler" Value="Dersler">
+                       <asp:MenuItem NavigateUrl="derskayit.aspx" Text="Ders Kayıt" Value="Ders Kayıt"></asp:MenuItem>
+                       <asp:MenuItem NavigateUrl="dersler.aspx" Text="Ders ve Not Listesi" Value="Ders ve Not Listesi"></asp:MenuItem>
+                       <asp:MenuItem NavigateUrl="devamsizlik.aspx" Text="Devamsızlık Bilgisi" Value="Devamsızlık Bilgisi"></asp:MenuItem>
+                       <asp:MenuItem NavigateUrl="sinavtarihleri.aspx" Text="Sınav Tarihleri" Value="Sınav Tarihleri"></asp:MenuItem>
+                       <asp:MenuItem NavigateUrl="transkript.aspx" Text="Transkript" Value="Transkript"></asp:MenuItem>
+                   </asp:MenuItem>
+                   <asp:MenuItem NavigateUrl="basvuru.aspx" Text="Başvuru" Value="Başvuru"></asp:MenuItem>
+                   <asp:MenuItem NavigateUrl="odemekayit.aspx" Text="Ödeme ve Kayıt Durumu" Value="Ödeme ve Kayıt Durumu"></asp:MenuItem>
+                   <asp:MenuItem NavigateUrl="mesaj.aspx" Text="Mesaj" Value="Mesaj"></asp:MenuItem>
+               </Items>
+           </asp:Menu>
+</ul>
+        <p class="logoutborder">
+        <asp:Button ID="LogoutButton" runat="server" Text="Button" CssClass="logoutbutton" OnClick="LogoutButton_Click" /></p>
+<div style="margin-left:25%;padding:1px 16px;height:1000px; align-content:center;">
+    <h2>T.C Üniversitesi Duyurular</h2>
+  <h3>Try to scroll this area, and see how the sidenav sticks to the page</h3>
+  <p>Notice that this div element has a left margin of 25%. This is because the side navigation is set to 25% width. If you remove the margin, the sidenav will overlay/sit on top of this div.</p>
+  <p>Also notice that we have set overflow:auto to sidenav. This will add a scrollbar when the sidenav is too long (for example if it has over 50 links inside of it).</p>
+  <p>Some text..</p>
+  <p>Some text..</p>
+  <p>Some text..</p>
+  <p>Some text..</p>
+  <p>Some text..</p>
+  <p>Some text..</p>
+  <p>Some text..</p>
+</div>
+        
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+
+        </asp:ContentPlaceHolder>
+    
+    </form>
+    <footer>
+        <p &copy; <%: DateTime.Now.Year %>-> T.C Üniversitesi</p>
+    </footer>
+</body>
+</html>
